@@ -1,4 +1,4 @@
-<%= form_with(model: post) do |form| %>
+<%= form_with(model: post, :html => {:style => 'margin-top: 60px;margin-bottom:60px'}) do |form| %>
   <% if post.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,17 +11,18 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="input-group mb-3">
+    <span class="input-group-text">Name</span>
+    <%= form.text_field(:name, :class => "form-control", 'aria-label' => "name", 'placeholder' => 'John Doe')%>
+    <span class="input-group-text">Title</span>
+    <%= form.text_field(:title, :class => "form-control", 'aria-label' => "title", 'placeholder' => 'A Blog Post')%>
   </div>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_field :body %>
+  <div class="input-group">
+    <span class="input-group-text">Body</span>
+    <%= form.text_area(:body, :class => "form-control", 'aria-label' => "body")%>
   </div>
-
-  <div>
-    <%= form.submit %>
+  <div style="margin-top: 15px">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
