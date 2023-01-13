@@ -1,16 +1,15 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Name:</strong>
-    <%= post.name %>
-  </p>
+  <h4 style="text-align:center">
+    <%= post.title%>
+  </h4>
 
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
+  <p style="">
+    <em>
+    By <%= post.name %>
+    </em>
   </p>
-
+  <hr>
   <p>
-    <strong>Body:</strong>
     <%= post.body %>
   </p>
 
